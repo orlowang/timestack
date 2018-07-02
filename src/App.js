@@ -1,21 +1,45 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { withTheme } from 'styled-components'
+import Flex from '@react-alpha/base.flex'
+import { darken } from 'polished'
+import LeftItemGroup from './components/leftItemGroup'
+import MeArea from './components/meArea'
+import TopBar from './components/topBar'
+import ChatRoom from './components/chatRoom'
+import MemberList from './components/memberList'
+import logo from './logo.svg'
+import './App.css'
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    const { theme } = this.props
+    return <Flex h="100%">
+      <Flex column bgc={theme.second.background} hc="space-between" w="230px">
+        <Flex column>
+          <LeftItemGroup title="Project">
+            project 1
+          </LeftItemGroup>
+          <LeftItemGroup title="Channel">
+            channel 1
+          </LeftItemGroup>
+          <LeftItemGroup title="Recent">
+            channel 1
+          </LeftItemGroup>
+          <LeftItemGroup title="Friends">
+            channel 1
+          </LeftItemGroup>
+        </Flex>
+        <MeArea bgc={darken(.02, theme.second.background)}/>
+      </Flex>
+      <Flex column full>
+        <TopBar />
+        <Flex full>
+          <ChatRoom />
+          <MemberList bgc={theme.second.background}/>
+        </Flex>
+      </Flex>
+    </Flex>
   }
 }
 
-export default App;
+export default withTheme(App)

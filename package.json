@@ -4,13 +4,20 @@
   "private": true,
   "main": "main.js",
   "dependencies": {
+    "@react-alpha/base.avatar": "^0.2.9",
+    "@react-alpha/base.avatar-card": "^0.2.10",
+    "@react-alpha/base.flex": "^0.2.7",
+    "@react-alpha/base.text": "^0.2.8",
     "electron": "2.0.3",
+    "polished": "^1.9.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "styled-components": "^3.3.3",
+    "text-wl": "^1.0.0"
   },
   "scripts": {
-    "start": "react-scripts start && electron .",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

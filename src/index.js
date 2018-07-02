@@ -1,8 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { ThemeProvider } from 'styled-components'
+import registerServiceWorker from './registerServiceWorker'
+import App from './App'
+import { theme } from './config'
+import './index.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <ThemeProvider theme={theme.light}>
+    <App />
+  </ThemeProvider>,
+  document.getElementById('ReactMountRoot')
+)
+registerServiceWorker()
